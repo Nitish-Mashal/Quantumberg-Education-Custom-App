@@ -1,3 +1,4 @@
+print("navbarSettings.py loaded")  # For debug
 import frappe
 
 def setup_help_dropdown():
