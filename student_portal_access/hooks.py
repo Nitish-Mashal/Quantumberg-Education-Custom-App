@@ -36,9 +36,9 @@ boot_session = "student_portal_access.api.custom_boot"
 
 # before_uninstall = "student_portal_access.navbarSettings.revert_help_dropdown"
 
-after_install = "student_portal_access.student_portal_access.navbarSettings.setup_help_dropdown"
+after_install = "student_portal_access.navbarSettings.setup_help_dropdown"
 
-before_uninstall = "student_portal_access.student_portal_access.navbarSettings.revert_help_dropdown"
+before_uninstall = "student_portal_access.navbarSettings.revert_help_dropdown"
 
 
 
