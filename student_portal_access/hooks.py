@@ -32,6 +32,11 @@ app_license = "mit"
 
 boot_session = "student_portal_access.api.custom_boot"
 
+after_install = "qdynamics_customizations.navbarSettings.setup_help_dropdown"
+
+before_uninstall = "qdynamics_customizations.navbarSettings.revert_help_dropdown"
+
+
 # I added this code }
 
 # include js, css files in header of web template
