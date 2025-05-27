@@ -28,6 +28,14 @@ app_license = "mit"
 # app_include_css = "/assets/student_portal_access/css/student_portal_access.css"
 # app_include_js = "/assets/student_portal_access/js/student_portal_access.js"
 
+# I added this code {
+
+boot_session = "student_portal_access.api.custom_boot"
+
+boot_session = "student_portal_access.navbarSettings.custom_boot"
+
+# I added this code }
+
 # include js, css files in header of web template
 # web_include_css = "/assets/student_portal_access/css/student_portal_access.css"
 # web_include_js = "/assets/student_portal_access/js/student_portal_access.js"
