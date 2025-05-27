@@ -1,9 +1,4 @@
-# student_portal_access/navbar.py
-
-import frappe
-
-def custom_boot(bootinfo):
-    # Labels to be hidden
+def patch_help_dropdown(bootinfo):
     labels_to_hide = {
         "Documentation",
         "User Forum",
@@ -13,13 +8,11 @@ def custom_boot(bootinfo):
         "Frappe Support"
     }
 
-    # Iterate and set `hidden: 1` for matching items
     if "help_dropdown" in bootinfo:
         for item in bootinfo["help_dropdown"]:
             if item.get("item_label") in labels_to_hide:
                 item["hidden"] = 1
 
-    # Add custom Education Documentation link
     bootinfo.setdefault("help_dropdown", []).append({
         "item_label": "Education Documentation",
         "item_type": "route",

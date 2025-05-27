@@ -32,8 +32,6 @@ app_license = "mit"
 
 boot_session = "student_portal_access.api.custom_boot"
 
-boot_session = "student_portal_access.navbarSettings.custom_boot"
-
 # I added this code }
 
 # include js, css files in header of web template
