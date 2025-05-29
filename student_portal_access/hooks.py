@@ -5,6 +5,8 @@ app_description = "Education_App"
 app_email = "nitishmashal0@gmail.com"
 app_license = "mit"
 
+export_python_type_annotations = True
+
 # Apps
 # ------------------
 
@@ -27,6 +29,7 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/student_portal_access/css/student_portal_access.css"
 # app_include_js = "/assets/student_portal_access/js/student_portal_access.js"
+app_include_js = "/assets/student_portal_access/js/student_redirect.js"
 
 # I added this code {
 
