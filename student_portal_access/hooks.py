@@ -7,6 +7,9 @@ app_license = "mit"
 
 export_python_type_annotations = True
 
+# Web route
+app_include_frontend = "frontend/index.html"
+
 # Apps
 # ------------------
 
@@ -33,7 +36,11 @@ app_include_js = "/assets/student_portal_access/js/student_redirect.js"
 
 # I added this code {
 
-boot_session = "student_portal_access.api.custom_boot"
+# boot_session = "student_portal_access.api.custom_boot"
+
+# role_home_page = {
+#     "Student": "/student-dashboard"
+# }
 
 # after_install = "student_portal_access.navbarSettings.setup_help_dropdown"
 

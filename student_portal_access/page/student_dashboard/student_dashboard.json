@@ -1,0 +1,7 @@
+{
+  "title": "Student Dashboard",
+  "icon": "fa fa-graduation-cap",
+  "route": "student-dashboard",
+  "type": "page",
+  "name": "student_dashboard"
+}
