@@ -32,7 +32,10 @@ app_include_frontend = "frontend/index.html"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/student_portal_access/css/student_portal_access.css"
 # app_include_js = "/assets/student_portal_access/js/student_portal_access.js"
-app_include_js = "/assets/student_portal_access/js/student_redirect.js"
+
+# app_include_js = "/assets/student_portal_access/js/student_redirect.js"
+
+app_include_js = "student_portal_access/public/js/student_redirect.js"
 
 # I added this code {
 

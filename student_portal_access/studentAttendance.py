@@ -1,28 +1,25 @@
 import frappe
 from frappe.utils import getdate
-from frappe import _  # Optional, for translations
+from frappe import _
 from frappe import whitelist
 from collections import defaultdict
 
-@frappe.whitelist()  # ✅ this line is essential
+@frappe.whitelist()
 def get_student_attendance_summary():
     student_id = frappe.get_value("Student", {"user": frappe.session.user})
     if not student_id:
         frappe.throw(_("Student not found for this user."))
 
-    # attendance_data = frappe.get_all("Student Attendance",
-    #     filters={"student": student_id, "docstatus": 1},
-    #     fields=["status", "attendance_date"]
-    # )
     attendance_data = frappe.get_all(
-    "Student Attendance",
-    filters={"student": student_id, "docstatus": 1},
-    fields=["status", "date"]  # ✅ use "date" if "attendance_date" doesn't exist
-)
+        "Student Attendance",
+        filters={"student": student_id, "docstatus": 1},
+        fields=["status", "date"]  # ✅ Use correct field
+    )
 
     summary = defaultdict(lambda: {"Present": 0, "Absent": 0})
+
     for record in attendance_data:
-        month = getdate(record.attendance_date).strftime("%b")
+        month = getdate(record.date).strftime("%b")  # ✅ Corrected this line
         summary[month][record.status] += 1
 
     labels = []

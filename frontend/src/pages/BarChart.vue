@@ -12,14 +12,13 @@
 import { ref, onMounted } from 'vue'
 import axios from 'axios'
 
-// Chart series and options
 const series = ref([])
 const chartOptions = ref({
     chart: {
         type: 'bar',
         toolbar: { show: false },
     },
-    colors: ['#10b981', '#ef4444'], // green = present, red = absent
+    colors: ['#10b981', '#ef4444'],
     xaxis: {
         categories: [],
     },
@@ -37,7 +36,12 @@ const chartOptions = ref({
     },
 })
 
-// On component mount, fetch attendance
+// Helper: convert month name to month index
+const getMonthIndex = (monthStr) => {
+    // Works with short month names like "Jan", "Feb", etc.
+    return new Date(Date.parse(monthStr + " 1, 2000")).getMonth()
+}
+
 onMounted(async () => {
     try {
         const res = await axios.get(
@@ -45,18 +49,32 @@ onMounted(async () => {
         )
 
         const data = res.data.message
+
+        // Combine month, present, and absent into one array
+        const combined = data.labels.map((label, index) => ({
+            label,
+            present: data.present[index],
+            absent: data.absent[index],
+        }))
+
+        // Sort by month index dynamically
+        combined.sort((a, b) => getMonthIndex(a.label) - getMonthIndex(b.label))
+
+        // Extract sorted arrays
+        const sortedLabels = combined.map(item => item.label)
+        const sortedPresent = combined.map(item => item.present)
+        const sortedAbsent = combined.map(item => item.absent)
+
         series.value = [
-            { name: 'Present', data: data.present },
-            { name: 'Absent', data: data.absent },
+            { name: 'Present', data: sortedPresent },
+            { name: 'Absent', data: sortedAbsent },
         ]
-        chartOptions.value.xaxis.categories = data.labels
+        chartOptions.value.xaxis.categories = sortedLabels
     } catch (error) {
         console.error('Failed to fetch attendance:', error)
     }
 })
 </script>
 
-<style scoped>
-/* Optional: add some styling if needed */
-</style>
-  
+
+
