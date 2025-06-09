@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && mkdir -p ../www/student-portal && cp -r ../student_portal_access/public/frontend/* ../student_portal_access/www/student-portal/",
     "preview": "vite preview"
   },
   "dependencies": {

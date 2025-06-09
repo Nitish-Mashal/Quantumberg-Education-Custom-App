@@ -6,6 +6,7 @@ import { webserver_port } from '../../../sites/common_site_config.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/student-portal/', // ✅ REQUIRED when app is served at /student-portal/
   plugins: [vue()],
   server: {
     port: 8080,

@@ -1,11 +1,11 @@
 <template>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
-        <a v-for="card in cards" :key="card.title" :href="card.link"
-            class="border rounded p-4 text-center hover:shadow-md cursor-pointer block w-full">
-            <div class="h-8 w-8 mx-auto mb-2 text-pink-700" v-html="card.icon" />
-            <div class="font-semibold break-words text-sm sm:text-base">{{ card.title }}</div>
-        </a>
-    </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-4">
+    <a v-for="card in cards" :key="card.title" :href="card.link"
+      class="border rounded p-4 text-center hover:shadow-md cursor-pointer block w-full">
+      <div class="h-8 w-8 mx-auto mb-2 text-pink-700" v-html="card.icon" />
+      <div class="font-semibold break-words text-sm sm:text-base">{{ card.title }}</div>
+    </a>
+  </div>
 </template>
 
 <script setup>
@@ -30,9 +30,9 @@ const scheduleIcon = `
 </svg>`;
 
 const cards = [
-    { title: 'Schedule', icon: scheduleIcon, link: 'http://127.0.0.1:8000/student-portal/schedule' },
-    { title: 'Grade', icon: gradeIcon, link: 'http://127.0.0.1:8000/student-portal/grades' },
-    { title: 'Fee', icon: feeIcon, link: 'http://127.0.0.1:8000/student-portal/fees' },
-    { title: 'Attendance', icon: attendanceIcon, link: 'http://127.0.0.1:8000/student-portal/attendance' }
+  { title: 'Schedule', icon: scheduleIcon, link: 'http://127.0.0.1:8000/student-portal/schedule' },
+  { title: 'Grade', icon: gradeIcon, link: 'http://127.0.0.1:8000/student-portal/grades' },
+  { title: 'Fee', icon: feeIcon, link: 'http://127.0.0.1:8000/student-portal/fees' },
+  { title: 'Attendance', icon: attendanceIcon, link: 'http://127.0.0.1:8000/student-portal/attendance' }
 ];
 </script>
