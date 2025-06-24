@@ -4,6 +4,6 @@ frappe.after_ajax(() => {
 
     // Redirect Student users to the Vue frontend home page
     if (roles.includes("Student") && currentPath === "/app/welcome-workspace") {
-        window.location.href = "/student-portal/";
+        window.location.href = "/student-portal/schedule";
     }
 });

@@ -6,7 +6,7 @@ import { webserver_port } from '../../../sites/common_site_config.json'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/student-portal/', // ✅ REQUIRED when app is served at /student-portal/
+  base: '/student-portal-dashboard/', // ✅ REQUIRED when app is served at /student-portal/
   plugins: [vue()],
   server: {
     port: 8080,
@@ -18,7 +18,7 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: `../${path.basename(path.resolve('..'))}/public/frontend`,
+    outDir: path.resolve(__dirname, '../public/www/student-portal-dashboard'),
     emptyOutDir: true,
     target: 'es2015',
   },

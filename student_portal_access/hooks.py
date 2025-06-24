@@ -35,6 +35,25 @@ app_include_frontend = "frontend/index.html"
 
 app_include_js = "/assets/student_portal_access/js/student_redirect.js"
 
+# doc_events = {
+#     "Notification Log": {
+#         "after_insert": "student_portal_access.api.notifications.push_realtime_notification"
+#     }
+# }
+
+
+doc_events = {
+    "Notification Log": {
+        "after_insert": "student_portal_access.api.notifications.push_realtime_notification"
+    },
+    "Student": {
+        "on_update": "student_portal_access.api.notifications.fix_student_notification_recipient"
+    }
+}
+
+
+app_include_js = "/assets/frappe/js/frappe-web.bundle.js"
+
 # app_include_js = "student_portal_access/public/js/student_redirect.js"
 
 # I added this code {
