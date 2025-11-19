@@ -43,7 +43,7 @@ const checkAuth = async () => {
 
     const data = await res.json()
     console.log('User:', data.message)
-    authChecked.value = true // Mark as loaded and authenticated
+    authChecked.value = true
 
   } catch (err) {
     console.warn('Access denied, redirecting to login...')
